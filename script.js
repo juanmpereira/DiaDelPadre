@@ -51,6 +51,7 @@ let currentQuestion = 0;
 const DATE_PHOTO_1_SRC = "assets/fecha-1.jpg";
 const DATE_PHOTO_2_SRC = "assets/fecha-2.jpg";
 const DATE_PHOTO_FALLBACK_SRC = "assets/nosotros.jpg";
+const MEMORY_VIDEO_SRC = "https://www.youtube-nocookie.com/embed/JGwWNGJdvx8";
 
 const stepIndicator = document.getElementById("step-indicator");
 const questionTitle = document.getElementById("question-title");
@@ -65,14 +66,11 @@ const nextBtn = document.getElementById("next-btn");
 
 const quizCard = document.getElementById("quiz-card");
 const specialDateCard = document.getElementById("special-date-card");
-const proposalCard = document.getElementById("proposal-card");
-const finalCard = document.getElementById("final-card");
+const videoCard = document.getElementById("video-card");
 const datePhoto1 = document.getElementById("date-photo-1");
 const datePhoto2 = document.getElementById("date-photo-2");
-const continueToProposalBtn = document.getElementById("continue-to-proposal");
-const proposalYesBtn = document.getElementById("proposal-yes-btn");
-const proposalNoBtn = document.getElementById("proposal-no-btn");
-const proposalFeedback = document.getElementById("proposal-feedback");
+const continueToVideoBtn = document.getElementById("continue-to-video");
+const memoryVideo = document.getElementById("memory-video");
 
 function setupDatePhotos() {
   const datePhotos = [
@@ -88,6 +86,11 @@ function setupDatePhotos() {
       element.src = DATE_PHOTO_FALLBACK_SRC;
     });
   });
+}
+
+function setupMemoryVideo() {
+  if (!memoryVideo) return;
+  memoryVideo.src = MEMORY_VIDEO_SRC;
 }
 
 function renderQuestion() {
@@ -142,19 +145,13 @@ function nextQuestion() {
 
 nextBtn.addEventListener("click", nextQuestion);
 
-continueToProposalBtn.addEventListener("click", () => {
-  specialDateCard.classList.add("hidden");
-  proposalCard.classList.remove("hidden");
-});
-
-proposalNoBtn.addEventListener("click", () => {
-  proposalFeedback.textContent = "Esa no era la respuesta correcta... intenta otra vez mi amor.";
-});
-
-proposalYesBtn.addEventListener("click", () => {
-  proposalCard.classList.add("hidden");
-  finalCard.classList.remove("hidden");
-});
+if (continueToVideoBtn) {
+  continueToVideoBtn.addEventListener("click", () => {
+    specialDateCard.classList.add("hidden");
+    videoCard.classList.remove("hidden");
+  });
+}
 
 setupDatePhotos();
+setupMemoryVideo();
 renderQuestion();

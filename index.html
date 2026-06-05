@@ -50,37 +50,27 @@
           </figure>
         </div>
 
-        <button class="btn btn-primary" id="continue-to-proposal">Siguiente</button>
+        <button class="btn btn-primary" id="continue-to-video">Ver video</button>
       </section>
 
-      <section class="card hidden" id="proposal-card">
-        <p class="step">La gran pregunta</p>
-        <p class="description">Espero hoy no tirar ningun vaso.</p>
-        <h2 class="title">¿Queres ser mi novia?</h2>
-        <p class="proposal-feedback" id="proposal-feedback"></p>
-        <div class="final-actions">
-          <button class="btn btn-primary" id="proposal-yes-btn">Si</button>
-          <button class="btn btn-ghost" id="proposal-no-btn">No</button>
-        </div>
-      </section>
+      <section class="card hidden" id="video-card">
+        <p class="step">Sorpresa final</p>
+        <h2 class="title">Nuestro video</h2>
+        <p class="description">
+          Este es un template. Cambia la URL en <strong>script.js</strong> para usar tu video.
+        </p>
 
-      <section class="card hidden celebration-card" id="final-card">
-        <div class="hearts" aria-hidden="true">
-          <span class="heart"></span>
-          <span class="heart"></span>
-          <span class="heart"></span>
-          <span class="heart"></span>
-          <span class="heart"></span>
-          <span class="heart"></span>
+        <div class="video-wrapper">
+          <iframe
+            id="memory-video"
+            title="Video especial"
+            src="https://www.youtube-nocookie.com/embed/JGwWNGJdvx8"
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
         </div>
-        <p class="step">Respuesta correcta</p>
-        <h2 class="title">Texto elegible.</h2>
-        <p class="proposal">Texto elegible.</p>
-
-        <figure class="photo-frame">
-          <img id="our-photo" src="assets/nosotros.jpg" alt="Foto de nosotros" />
-          <figcaption id="special-date">fecha elegible</figcaption>
-        </figure>
       </section>
     </main>
 

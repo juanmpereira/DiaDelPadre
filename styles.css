@@ -219,6 +219,21 @@ body {
   width: 100%;
 }
 
+.video-wrapper {
+  margin-top: 16px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: #000;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 .proposal-feedback {
   min-height: 24px;
   margin: 10px 0 0;
