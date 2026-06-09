@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Una Pregunta Muy Especial</title>
+    <title>Camino de Recuerdos para Papa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -17,29 +17,41 @@
     <div class="bg-shape shape-2" aria-hidden="true"></div>
 
     <main class="app">
-      <section class="card" id="quiz-card">
-        <p class="step" id="step-indicator">Pregunta 1 de 5</p>
-        <h1 class="title" id="question-title"></h1>
-        <p class="description" id="question-subtitle"></p>
-        <p class="answer-feedback" id="answer-feedback"></p>
+      <section class="card" id="timeline-card">
+        <p class="step" id="timeline-progress">Parada 1 de 6</p>
+        <h1 class="title">El camino de nuestros recuerdos</h1>
+        <p class="description" id="timeline-intro">
+          Un recorrido por momentos que siempre voy a guardar: futbol, cancha, asados, viajes y todo lo compartido con vos.
+        </p>
 
-        <div class="actions" id="question-actions"></div>
+        <section class="timeline-board" id="timeline-board" aria-label="Camino de recuerdos"></section>
+      </section>
 
-        <section class="moment-card hidden" id="moment-card">
-          <p class="step">Respuesta correcta</p>
-          <h3 class="moment-title" id="moment-title"></h3>
-          <figure class="photo-frame">
-            <img id="moment-photo" src="assets/momento-1.jpg" alt="Recuerdo del momento" />
-            <figcaption id="moment-caption"></figcaption>
-          </figure>
-          <button class="btn btn-primary" id="next-btn">Siguiente</button>
-        </section>
+      <section class="card hidden" id="memory-card">
+        <p class="step" id="memory-step">Recuerdo desbloqueado</p>
+        <h2 class="title" id="memory-title"></h2>
+        <p class="description" id="memory-description"></p>
+
+        <div class="memory-gallery-card">
+          <div class="memory-media" id="memory-media"></div>
+          <div class="memory-gallery-nav">
+            <button class="btn btn-ghost" id="prev-media-btn" type="button">Anterior</button>
+            <p class="memory-gallery-status" id="memory-gallery-status">1 / 1</p>
+            <button class="btn btn-ghost" id="next-media-btn" type="button">Siguiente</button>
+          </div>
+          <div class="memory-thumbnails" id="memory-thumbnails"></div>
+        </div>
+        <p class="memory-note" id="memory-note"></p>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="complete-stop-btn">Seguir recorrido</button>
+        </div>
       </section>
 
       <section class="card hidden" id="special-date-card">
-        <p class="step">Desbloqueaste la fecha especial</p>
-        <p class="big-date">18/08/2024</p>
-        <p class="description">Un dia que quiero recordar siempre con vos.</p>
+        <p class="step">Completaste el juego</p>
+        <p class="big-date">Feliz Dia del Padre</p>
+        <p class="description">Gracias por cada momento compartido: futbol, cancha, asados y abrazos.</p>
 
         <div class="dual-photos">
           <figure class="photo-frame small-photo-frame">
@@ -50,14 +62,14 @@
           </figure>
         </div>
 
-        <button class="btn btn-primary" id="continue-to-video">Ver video</button>
+        <button class="btn btn-primary" id="continue-to-video">Ver sorpresa final</button>
       </section>
 
       <section class="card hidden" id="video-card">
         <p class="step">Sorpresa final</p>
-        <h2 class="title">Nuestro video</h2>
+        <h2 class="title">Video para papa</h2>
         <p class="description">
-          Este es un template. Cambia la URL en <strong>script.js</strong> para usar tu video.
+          Cambia la URL en <strong>script.js</strong> para poner tu video favorito para el.
         </p>
 
         <div class="video-wrapper">
