@@ -1,151 +1,247 @@
 const memories = [
   {
     id: 1,
-    label: "Viajecitos",
-    title: "Nuestros viajecitos",
+    label: "Comienzo",
+    title: "Donde todo empezo",
     description:
-      "Primera parada: esos viajecitos que compartimos y que siempre me sacan una sonrisa.",
-    note: "Puedes seguir sumando fotos de este momento y despues vamos ajustando textos si quieres.",
+      "Estas fotos donde todo empezo, donde nos empezaste a demostrar lo mucho que nos queres y cuidas",
+    note: "Primera parada de nuestro recorrido juntos.",
+    showContinueButton: false,
     gallery: [
       {
         type: "image",
-        src: "assets/viajecitos-1.jpeg",
-        alt: "Viajecitos con papa 1",
-        caption: "Primer viajecito desbloqueado.",
+        src: "assets/bebes1.jpeg",
+        alt: "Bebes 1",
+        caption: "Donde todo comenzo.",
       },
       {
         type: "image",
-        src: "assets/viajecitos-2.jpeg",
-        alt: "Viajecitos con papa 2",
-        caption: "Segundo recuerdo de nuestros viajecitos.",
+        src: "assets/bebes2.jpeg",
+        alt: "Bebes 2",
+        caption: "Tus cuidados desde el principio.",
       },
       {
         type: "image",
-        src: "assets/viajecitos-3.jpeg",
-        alt: "Viajecitos con papa 3",
-        caption: "Tercer recuerdo de ruta juntos.",
+        src: "assets/bebes3.jpeg",
+        alt: "Bebes 3",
+        caption: "Tu amor desde el primer momento.",
       },
       {
         type: "image",
-        src: "assets/viajecitos-4.jpeg",
-        alt: "Viajecitos con papa 4",
-        caption: "Cuarto recuerdo de este momento.",
+        src: "assets/bebes4.jpeg",
+        alt: "Bebes 4",
+        caption: "Creciendo bajo tu cuidado.",
       },
       {
         type: "image",
-        src: "assets/viajecitos-5.jpeg",
-        alt: "Viajecitos con papa 5",
-        caption: "Quinto recuerdo para cerrar la primera parada.",
+        src: "assets/bebes5.jpeg",
+        alt: "Bebes 5",
+        caption: "El inicio de nuestras historias.",
       },
     ],
   },
   {
     id: 2,
-    label: "Cancha",
-    title: "Las veces que fuimos a la cancha juntos",
+    label: "Crecer",
+    title: "Nuestro recorrido juntos",
     description:
-      "La tribuna, los cantos, los abrazos en los goles y esas salidas que siempre quedaron guardadas.",
-    note: "Aca puedes usar una foto en la cancha o un video corto del ambiente de tribuna.",
+      "Nuestro recorrido juntos fue creciendo y fuimos aprendiendo todo de vos",
+    note: "Segunda parada de nuestro viaje.",
+    showContinueButton: true,
     gallery: [
       {
         type: "image",
-        src: "assets/fecha-1.jpg",
-        alt: "Recuerdo en la cancha con papa",
-        caption: "La previa, la tribuna y el abrazo en cada gol siguen intactos.",
+        src: "assets/crecer1.jpeg",
+        alt: "Crecer 1",
+        caption: "Aprendiendo de vos cada dia.",
       },
       {
         type: "image",
-        src: "assets/fecha-2.jpg",
-        alt: "Otro recuerdo de cancha con papa",
-        caption: "Aca puedes meter una segunda foto de cancha para que se sienta mas vivo el momento.",
+        src: "assets/crecer2.jpeg",
+        alt: "Crecer 2",
+        caption: "Tu ejemplo nos guio.",
+      },
+      {
+        type: "image",
+        src: "assets/crecer3.jpeg",
+        alt: "Crecer 3",
+        caption: "Creciendo bajo tu tutela.",
+      },
+      {
+        type: "image",
+        src: "assets/crecer4.jpeg",
+        alt: "Crecer 4",
+        caption: "Cada momento de crecimiento.",
+      },
+      {
+        type: "image",
+        src: "assets/crecer5.jpeg",
+        alt: "Crecer 5",
+        caption: "Gracias por enseñarnos a crecer.",
       },
     ],
   },
   {
     id: 3,
-    label: "Asados",
-    title: "Tus asados de domingo",
+    label: "Futbol",
+    title: "Pasion por el deporte",
     description:
-      "Hay cosas que tienen olor a casa, y para mi una de esas siempre va a ser un asado hecho por vos.",
-    note: "Aca puede ir una foto de la parrilla, la mesa familiar o un video de las brasas.",
+      "Aprendimos de vos lo que es la pasion y el amor por el deporte",
+    note: "Tercera parada: futbol.",
+    showContinueButton: true,
     gallery: [
       {
         type: "image",
-        src: "assets/fecha-2.jpg",
-        alt: "Asado familiar con papa",
-        caption: "No era solo comer, era el ritual de verte en la parrilla y reunirnos todos.",
+        src: "assets/futbol1.jpeg",
+        alt: "Futbol 1",
+        caption: "Tu pasion nos inspiro.",
       },
       {
         type: "image",
-        src: "assets/nosotros.jpg",
-        alt: "Mesa familiar alrededor del asado",
-        caption: "Aca puedes agregar una foto de la mesa, la parrilla o incluso un video del fuego.",
+        src: "assets/futbol2.jpeg",
+        alt: "Futbol 2",
+        caption: "El deporte que nos unio.",
+      },
+      {
+        type: "image",
+        src: "assets/futbol3.jpeg",
+        alt: "Futbol 3",
+        caption: "Compartiendo emociones en la cancha.",
+      },
+      {
+        type: "image",
+        src: "assets/futbol4.jpeg",
+        alt: "Futbol 4",
+        caption: "Tu amor por el futbol.",
+      },
+      {
+        type: "image",
+        src: "assets/futbol5.jpeg",
+        alt: "Futbol 5",
+        caption: "Recuerdos de pasion y alegria.",
       },
     ],
   },
   {
     id: 4,
     label: "Viajes",
-    title: "Los viajes que compartimos",
+    title: "Recorriendo el mundo juntos",
     description:
-      "Cada viaje tuvo algo tuyo: la compania, el humor, las charlas y esa forma de hacer especial cualquier camino.",
-    note: "Cuando me pases material, aca podemos poner una foto del auto, ruta o vacaciones.",
+      "Nos llevaste a recorrer una parte del mundo juntos, y todavia nos falta por recorrer.",
+    note: "Cuarta parada: nuestros viajes.",
+    showContinueButton: true,
     gallery: [
       {
         type: "image",
-        src: "assets/nosotros.jpg",
-        alt: "Recuerdo de viajes con papa",
-        caption: "Hay viajes que se recuerdan por el lugar y otros por quien iba al lado. Este es de esos.",
+        src: "assets/viajecitos1.jpeg",
+        alt: "Viajecitos 1",
+        caption: "Primer viaje compartido.",
       },
       {
         type: "image",
-        src: "assets/momento.jpg",
-        alt: "Ruta compartida con papa",
-        caption: "Aca puedes poner una foto de ruta, del auto o de alguna parada especial.",
+        src: "assets/viajecitos2.jpeg",
+        alt: "Viajecitos 2",
+        caption: "En la ruta contigo.",
+      },
+      {
+        type: "image",
+        src: "assets/viajecitos3.jpeg",
+        alt: "Viajecitos 3",
+        caption: "Destinos que compartimos.",
+      },
+      {
+        type: "image",
+        src: "assets/viajecitos4.jpeg",
+        alt: "Viajecitos 4",
+        caption: "Viajes que quedaron en nuestro corazon.",
+      },
+      {
+        type: "image",
+        src: "assets/viajecitos5.jpeg",
+        alt: "Viajecitos 5",
+        caption: "Y todavia hay mas por conocer contigo.",
       },
     ],
   },
   {
     id: 5,
-    label: "Familia",
-    title: "Los momentos simples que valen todo",
+    label: "Roquito",
+    title: "El amor que nos une a todos",
     description:
-      "Estar en casa, compartir una comida o hablar un rato tambien son de esos recuerdos que quedan para siempre.",
-    note: "Este punto sirve para una foto tranquila en familia o un video saludando.",
+      "Despues de negarte mucho, lo dejaste entrar a tu vida y lo amaste desde ese momento",
+    note: "Quinta parada: Roquito.",
+    showContinueButton: true,
     gallery: [
       {
         type: "image",
-        src: "assets/nosotros.jpg",
-        alt: "Momento en familia con papa",
-        caption: "Los ratos tranquilos tambien terminan siendo de los recuerdos mas grandes.",
+        src: "assets/rocco1.jpeg",
+        alt: "Rocco 1",
+        caption: "Cuando lo aceptaste en tu vida.",
       },
       {
         type: "image",
-        src: "assets/fecha-1.jpg",
-        alt: "Otro momento familiar con papa",
-        caption: "Aca puedes sumar una foto simple en casa o un video saludando entre todos.",
+        src: "assets/rocco2.jpeg",
+        alt: "Rocco 2",
+        caption: "Tu amor cambio tu corazon.",
+      },
+      {
+        type: "image",
+        src: "assets/rocco3.jpeg",
+        alt: "Rocco 3",
+        caption: "El que completa nuestra familia.",
+      },
+      {
+        type: "image",
+        src: "assets/rocco4.jpeg",
+        alt: "Rocco 4",
+        caption: "Roquito y vos, un amor especial.",
+      },
+      {
+        type: "image",
+        src: "assets/rocco5.jpeg",
+        alt: "Rocco 5",
+        caption: "Gracias por abrir tu corazon.",
       },
     ],
   },
   {
     id: 6,
-    label: "Final",
-    title: "Todo lo que me dejaste",
+    label: "Juntos",
+    title: "Todos los que te amamos",
     description:
-      "Gracias por acompanarme en cada etapa y por estar en tantos recuerdos que hoy forman mi vida.",
-    note: "Este ultimo punto puede terminar en una foto muy especial o directamente en el video final.",
+      "Este recorrido termina con todos los que te amamos, gracias por estar siempre. Feliz dia del padre ❤️",
+    note: "Ultima parada: todos juntos.",
+    showContinueButton: true,
     gallery: [
       {
         type: "image",
-        src: "assets/nosotros.jpg",
-        alt: "Recuerdo final con papa",
-        caption: "El cierre puede ser una foto muy especial antes de pasar al video final.",
+        src: "assets/juntos1.jpeg",
+        alt: "Juntos 1",
+        caption: "Todos somos porque vos sos.",
       },
       {
         type: "image",
-        src: "assets/momento.jpg",
-        alt: "Cierre del recorrido con papa",
-        caption: "Despues, desde aca, saltamos directo a la sorpresa final.",
+        src: "assets/juntos2.jpeg",
+        alt: "Juntos 2",
+        caption: "Tu familia que te ama.",
+      },
+      {
+        type: "image",
+        src: "assets/juntos3.jpeg",
+        alt: "Juntos 3",
+        caption: "Gracias por cada momento.",
+      },
+      {
+        type: "image",
+        src: "assets/juntos4.jpeg",
+        alt: "Juntos 4",
+        caption: "Feliz dia del padre.",
+      },
+      {
+        type: "image",
+        src: "assets/juntos5.jpeg",
+        alt: "Juntos 5",
+        caption: "Te amamos ❤️",
       },
     ],
   },
@@ -230,16 +326,32 @@ function createVideoMedia(mediaItem) {
   const wrapper = document.createElement("div");
   wrapper.className = "video-wrapper";
 
-  const iframe = document.createElement("iframe");
-  iframe.title = mediaItem.alt;
-  iframe.src = mediaItem.src;
-  iframe.loading = "lazy";
-  iframe.referrerPolicy = "strict-origin-when-cross-origin";
-  iframe.allow =
-    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
-  iframe.allowFullscreen = true;
+  const isYouTubeUrl = mediaItem.src.includes("youtube") || mediaItem.src.includes("youtu.be");
 
-  wrapper.appendChild(iframe);
+  if (isYouTubeUrl) {
+    const iframe = document.createElement("iframe");
+    iframe.title = mediaItem.alt;
+    iframe.src = mediaItem.src;
+    iframe.loading = "lazy";
+    iframe.referrerPolicy = "strict-origin-when-cross-origin";
+    iframe.allow =
+      "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    wrapper.appendChild(iframe);
+  } else {
+    const video = document.createElement("video");
+    video.controls = true;
+    video.style.width = "100%";
+    video.style.borderRadius = "14px";
+
+    const source = document.createElement("source");
+    source.src = mediaItem.src;
+    source.type = "video/mp4";
+
+    video.appendChild(source);
+    video.textContent = "Tu navegador no soporta videos HTML5.";
+    wrapper.appendChild(video);
+  }
 
   if (mediaItem.caption) {
     const caption = document.createElement("p");
@@ -249,6 +361,22 @@ function createVideoMedia(mediaItem) {
   }
 
   return wrapper;
+}
+
+function inferMediaType(mediaItem) {
+  if (mediaItem.type === "video" || mediaItem.type === "image") {
+    return mediaItem.type;
+  }
+
+  const normalizedSrc = (mediaItem.src || "").toLowerCase().split("?")[0].split("#")[0];
+  const isYouTubeUrl = normalizedSrc.includes("youtube") || normalizedSrc.includes("youtu.be");
+  const isVideoFile = /\.(mp4|webm|ogg|mov|m4v)$/.test(normalizedSrc);
+
+  if (isYouTubeUrl || isVideoFile) {
+    return "video";
+  }
+
+  return "image";
 }
 
 function getActiveMemory() {
@@ -267,8 +395,10 @@ function renderGalleryThumbnails(memory) {
       thumbButton.classList.add("active");
     }
 
+    const inferredType = inferMediaType(mediaItem);
+
     thumbButton.innerHTML = `
-      <span class="memory-thumb-type">${mediaItem.type === "video" ? "Video" : "Foto"}</span>
+      <span class="memory-thumb-type">${inferredType === "video" ? "Video" : "Foto"}</span>
       <span class="memory-thumb-index">${index + 1}</span>
     `;
     thumbButton.addEventListener("click", () => {
@@ -279,20 +409,28 @@ function renderGalleryThumbnails(memory) {
   });
 }
 
+function renderMemoryMedia(memory) {
+  memoryMedia.innerHTML = "";
+  const mediaItem = memory.gallery[activeGalleryIndex];
+  const inferredType = inferMediaType(mediaItem);
+  const mediaElement = inferredType === "video" ? createVideoMedia(mediaItem) : createImageMedia(mediaItem);
+  memoryMedia.appendChild(mediaElement);
+  renderGalleryThumbnails(memory);
+  updateGalleryControls(memory);
+}
+
 function updateGalleryControls(memory) {
   const total = memory.gallery.length;
   memoryGalleryStatus.textContent = `${activeGalleryIndex + 1} / ${total}`;
   prevMediaBtn.disabled = activeGalleryIndex === 0;
-  nextMediaBtn.disabled = activeGalleryIndex === total - 1;
-}
+  nextMediaBtn.disabled = false;
 
-function renderMemoryMedia(memory) {
-  memoryMedia.innerHTML = "";
-  const mediaItem = memory.gallery[activeGalleryIndex];
-  const mediaElement = mediaItem.type === "video" ? createVideoMedia(mediaItem) : createImageMedia(mediaItem);
-  memoryMedia.appendChild(mediaElement);
-  renderGalleryThumbnails(memory);
-  updateGalleryControls(memory);
+  const isLastPhoto = activeGalleryIndex === total - 1;
+  if (isLastPhoto && !memory.showContinueButton) {
+    completeStopBtn.classList.add("hidden");
+  } else {
+    completeStopBtn.classList.remove("hidden");
+  }
 }
 
 function updateTimelineProgress() {
@@ -353,23 +491,19 @@ function openMemory(memoryId) {
   memoryTitle.textContent = selectedMemory.title;
   memoryDescription.textContent = selectedMemory.description;
   memoryNote.textContent = selectedMemory.note;
-  renderMemoryMedia(selectedMemory);
   completeStopBtn.textContent = memoryId === memories.length ? "Desbloquear sorpresa" : "Seguir recorrido";
+
+  if (!selectedMemory.showContinueButton) {
+    completeStopBtn.classList.add("hidden");
+  } else {
+    completeStopBtn.classList.remove("hidden");
+  }
+
+  renderMemoryMedia(selectedMemory);
 
   timelineCard.classList.add("hidden");
   memoryCard.classList.remove("hidden");
   renderTimeline();
-}
-
-function stepGallery(direction) {
-  const selectedMemory = getActiveMemory();
-  if (!selectedMemory) return;
-
-  const nextIndex = activeGalleryIndex + direction;
-  if (nextIndex < 0 || nextIndex >= selectedMemory.gallery.length) return;
-
-  activeGalleryIndex = nextIndex;
-  renderMemoryMedia(selectedMemory);
 }
 
 function continueJourney() {
@@ -384,6 +518,26 @@ function continueJourney() {
   memoryCard.classList.add("hidden");
   timelineCard.classList.remove("hidden");
   renderTimeline();
+}
+
+function stepGallery(direction) {
+  const selectedMemory = getActiveMemory();
+  if (!selectedMemory) return;
+
+  const nextIndex = activeGalleryIndex + direction;
+  const total = selectedMemory.gallery.length;
+
+  if (nextIndex < 0) return;
+
+  if (nextIndex >= total) {
+    if (!selectedMemory.showContinueButton) {
+      continueJourney();
+    }
+    return;
+  }
+
+  activeGalleryIndex = nextIndex;
+  renderMemoryMedia(selectedMemory);
 }
 
 completeStopBtn.addEventListener("click", continueJourney);
