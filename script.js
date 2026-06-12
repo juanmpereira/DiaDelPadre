@@ -341,6 +341,8 @@ function createVideoMedia(mediaItem) {
   } else {
     const video = document.createElement("video");
     video.controls = true;
+    video.preload = "metadata";
+    video.playsInline = true;
     video.style.width = "100%";
     video.style.borderRadius = "14px";
 
@@ -349,7 +351,7 @@ function createVideoMedia(mediaItem) {
     source.type = "video/mp4";
 
     video.appendChild(source);
-    video.textContent = "Tu navegador no soporta videos HTML5.";
+    video.appendChild(document.createTextNode("Tu navegador no soporta videos HTML5."));
     wrapper.appendChild(video);
   }
 
