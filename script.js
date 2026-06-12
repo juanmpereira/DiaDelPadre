@@ -179,8 +179,8 @@ const memories = [
         caption: "Cuando lo aceptaste en tu vida.",
       },
       {
-        type: "image",
-        src: "assets/rocco2.jpeg",
+        type: "video",
+        src: "assets/rocco2.mp4",
         alt: "Rocco 2",
         caption: "Tu amor cambio tu corazon.",
       },
@@ -197,8 +197,8 @@ const memories = [
         caption: "Roquito y vos, un amor especial.",
       },
       {
-        type: "image",
-        src: "assets/rocco5.jpeg",
+        type: "video",
+        src: "assets/rocco5.mp4",
         alt: "Rocco 5",
         caption: "Gracias por abrir tu corazon.",
       },
@@ -364,16 +364,16 @@ function createVideoMedia(mediaItem) {
 }
 
 function inferMediaType(mediaItem) {
-  if (mediaItem.type === "video" || mediaItem.type === "image") {
-    return mediaItem.type;
-  }
-
   const normalizedSrc = (mediaItem.src || "").toLowerCase().split("?")[0].split("#")[0];
   const isYouTubeUrl = normalizedSrc.includes("youtube") || normalizedSrc.includes("youtu.be");
   const isVideoFile = /\.(mp4|webm|ogg|mov|m4v)$/.test(normalizedSrc);
 
   if (isYouTubeUrl || isVideoFile) {
     return "video";
+  }
+
+  if (mediaItem.type === "video" || mediaItem.type === "image") {
+    return mediaItem.type;
   }
 
   return "image";
@@ -424,13 +424,6 @@ function updateGalleryControls(memory) {
   memoryGalleryStatus.textContent = `${activeGalleryIndex + 1} / ${total}`;
   prevMediaBtn.disabled = activeGalleryIndex === 0;
   nextMediaBtn.disabled = false;
-
-  const isLastPhoto = activeGalleryIndex === total - 1;
-  if (isLastPhoto && !memory.showContinueButton) {
-    completeStopBtn.classList.add("hidden");
-  } else {
-    completeStopBtn.classList.remove("hidden");
-  }
 }
 
 function updateTimelineProgress() {
@@ -491,13 +484,6 @@ function openMemory(memoryId) {
   memoryTitle.textContent = selectedMemory.title;
   memoryDescription.textContent = selectedMemory.description;
   memoryNote.textContent = selectedMemory.note;
-  completeStopBtn.textContent = memoryId === memories.length ? "Desbloquear sorpresa" : "Seguir recorrido";
-
-  if (!selectedMemory.showContinueButton) {
-    completeStopBtn.classList.add("hidden");
-  } else {
-    completeStopBtn.classList.remove("hidden");
-  }
 
   renderMemoryMedia(selectedMemory);
 
@@ -530,9 +516,7 @@ function stepGallery(direction) {
   if (nextIndex < 0) return;
 
   if (nextIndex >= total) {
-    if (!selectedMemory.showContinueButton) {
-      continueJourney();
-    }
+    continueJourney();
     return;
   }
 
@@ -540,7 +524,6 @@ function stepGallery(direction) {
   renderMemoryMedia(selectedMemory);
 }
 
-completeStopBtn.addEventListener("click", continueJourney);
 prevMediaBtn.addEventListener("click", () => stepGallery(-1));
 nextMediaBtn.addEventListener("click", () => stepGallery(1));
 
