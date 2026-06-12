@@ -31,9 +31,9 @@ function safePath(urlPath) {
   return path.join(ROOT, normalized);
 }
 
-function sendFile(res, filePath) {
-  fs.readFile(filePath, (err, data) => {
-    if (err) {
+function sendFile(req, res, filePath) {
+  fs.stat(filePath, (statErr, stats) => {
+    if (statErr || !stats.isFile()) {
       res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8" });
       res.end("Not Found");
       return;
@@ -41,8 +41,51 @@ function sendFile(res, filePath) {
 
     const ext = path.extname(filePath).toLowerCase();
     const contentType = MIME_TYPES[ext] || "application/octet-stream";
-    res.writeHead(200, { "Content-Type": contentType });
-    res.end(data);
+    const range = req.headers.range;
+
+    if (range) {
+      const match = range.match(/bytes=(\d*)-(\d*)/);
+      if (!match) {
+        res.writeHead(416, { "Content-Type": "text/plain; charset=utf-8" });
+        res.end("Range Not Satisfiable");
+        return;
+      }
+
+      const start = match[1] ? Number(match[1]) : 0;
+      const end = match[2] ? Number(match[2]) : stats.size - 1;
+
+      if (Number.isNaN(start) || Number.isNaN(end) || start > end || start >= stats.size) {
+        res.writeHead(416, { "Content-Type": "text/plain; charset=utf-8" });
+        res.end("Range Not Satisfiable");
+        return;
+      }
+
+      res.writeHead(206, {
+        "Content-Type": contentType,
+        "Content-Length": end - start + 1,
+        "Content-Range": `bytes ${start}-${end}/${stats.size}`,
+        "Accept-Ranges": "bytes",
+        "Cache-Control": "no-cache",
+      });
+
+      fs.createReadStream(filePath, { start, end }).pipe(res);
+      return;
+    }
+
+    const stream = fs.createReadStream(filePath);
+    res.writeHead(200, {
+      "Content-Type": contentType,
+      "Content-Length": stats.size,
+      "Accept-Ranges": "bytes",
+      "Cache-Control": "no-cache",
+    });
+
+    stream.on("error", () => {
+      res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+      res.end("Internal Server Error");
+    });
+
+    stream.pipe(res);
   });
 }
 
@@ -67,11 +110,11 @@ function requestHandler(req, res) {
 
   fs.stat(filePath, (err, stats) => {
     if (!err && stats.isFile()) {
-      sendFile(res, filePath);
+      sendFile(req, res, filePath);
       return;
     }
 
-    sendFile(res, path.join(ROOT, "index.html"));
+    sendFile(req, res, path.join(ROOT, "index.html"));
   });
 }
 
