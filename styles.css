@@ -270,6 +270,17 @@ body {
   margin-top: 18px;
 }
 
+.memory-media .photo-frame {
+  width: min(720px, 100%);
+  margin-inline: auto;
+}
+
+.memory-media .photo-frame img {
+  max-height: min(72vh, 680px);
+  object-fit: contain;
+  background: #fff5ef;
+}
+
 .memory-gallery-card {
   margin-top: 18px;
   padding: 18px;

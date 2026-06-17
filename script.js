@@ -165,11 +165,11 @@ const memories = [
   },
   {
     id: 5,
-    label: "Roquito",
+    label: "Nuevo integrante",
     title: "El amor que nos une a todos",
     description:
       "Despues de negarte mucho, lo dejaste entrar a tu vida y lo amaste desde ese momento",
-    note: "Quinta parada: Roquito.",
+    note: "Quinta parada: nuevo integrante.",
     showContinueButton: true,
     gallery: [
       {
