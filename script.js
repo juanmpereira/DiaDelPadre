@@ -271,33 +271,6 @@ const nextMediaBtn = document.getElementById("next-media-btn");
 const memoryGalleryStatus = document.getElementById("memory-gallery-status");
 const memoryNote = document.getElementById("memory-note");
 const completeStopBtn = document.getElementById("complete-stop-btn");
-const specialDateCard = document.getElementById("special-date-card");
-const videoCard = document.getElementById("video-card");
-const datePhoto1 = document.getElementById("date-photo-1");
-const datePhoto2 = document.getElementById("date-photo-2");
-const continueToVideoBtn = document.getElementById("continue-to-video");
-const memoryVideo = document.getElementById("memory-video");
-
-function setupDatePhotos() {
-  const datePhotos = [
-    { element: datePhoto1, src: DATE_PHOTO_1_SRC },
-    { element: datePhoto2, src: DATE_PHOTO_2_SRC },
-  ];
-
-  datePhotos.forEach(({ element, src }) => {
-    if (!element) return;
-    element.src = src;
-    element.addEventListener("error", () => {
-      if (element.src.includes(DATE_PHOTO_FALLBACK_SRC)) return;
-      element.src = DATE_PHOTO_FALLBACK_SRC;
-    });
-  });
-}
-
-function setupMemoryVideo() {
-  if (!memoryVideo) return;
-  memoryVideo.src = MEMORY_VIDEO_SRC;
-}
 
 function createImageMedia(mediaItem) {
   const figure = document.createElement("figure");
@@ -496,8 +469,11 @@ function openMemory(memoryId) {
 
 function continueJourney() {
   if (activeMemoryId === memories.length) {
+    unlockedStops = memories.length;
+    activeMemoryId = 1;
     memoryCard.classList.add("hidden");
-    specialDateCard.classList.remove("hidden");
+    timelineCard.classList.remove("hidden");
+    renderTimeline();
     return;
   }
 
@@ -529,13 +505,4 @@ function stepGallery(direction) {
 prevMediaBtn.addEventListener("click", () => stepGallery(-1));
 nextMediaBtn.addEventListener("click", () => stepGallery(1));
 
-if (continueToVideoBtn) {
-  continueToVideoBtn.addEventListener("click", () => {
-    specialDateCard.classList.add("hidden");
-    videoCard.classList.remove("hidden");
-  });
-}
-
-setupDatePhotos();
-setupMemoryVideo();
 renderTimeline();
